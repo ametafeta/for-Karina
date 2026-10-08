@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nurse English 🩺</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@600;700&display=swap">
+<style>
+:root{--bg:#effafa;--ink:#1d3a40;--g:#2ec4b6;--gold:#ffcc4d;--coral:#ff8a9a;--sky:#8ad1ff;--soft:#dff3f3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:700 16px 'Nunito',system-ui,sans-serif;background-image:radial-gradient(circle at 0 0,#ffe3e8 0,transparent 35%),radial-gradient(circle at 100% 30%,#d3f0ff 0,transparent 35%)}
+h1,h2,.tab,.btn,.chip,.pill{font-family:'Baloo 2','Nunito',system-ui,sans-serif}
+.wrap{max-width:560px;margin:0 auto;padding:14px 14px 40px}
+h1{font-size:26px;margin:2px 0;font-weight:700}
+.sub{margin:0 0 8px;opacity:.7;font-size:14px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+.tab,.pill{flex:none;border:0;border-radius:999px;padding:6px 14px;background:#fff;color:var(--ink);font-size:16px;font-weight:600;box-shadow:0 3px 0 #c6e5e5;cursor:pointer}
+.tab.on{background:var(--g);color:#fff;box-shadow:0 3px 0 #1c9a8e}
+.tab.boss.on{background:#ff5c6c;box-shadow:0 3px 0 #c93546}
+.pills{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px}
+.pill{padding:4px 12px;font-size:15px}.pill.on{background:var(--coral);color:#fff;box-shadow:0 3px 0 #e0566c}
+h2{font-size:21px;margin:14px 0 2px;font-weight:700}
+.hint{font-size:14px;opacity:.75;margin:0 0 10px}
+.bar{height:10px;background:#fff;border-radius:9px;overflow:hidden;margin:0 0 12px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--g),var(--gold));border-radius:9px;transition:width .4s}
+.btn{border:0;border-radius:16px;padding:9px 18px;background:var(--g);color:#fff;font-size:17px;font-weight:600;box-shadow:0 3px 0 #1c9a8e;cursor:pointer}
+.btn.alt{background:var(--coral);box-shadow:0 3px 0 #e0566c}
+.row{display:flex;gap:10px;justify-content:center;margin:14px 0 4px;flex-wrap:wrap}
+.win{text-align:center;font:700 21px 'Baloo 2',system-ui,sans-serif;margin:12px 0;color:#16998c}
+.q{background:#fff;border-radius:20px;padding:14px;margin:0 0 12px;box-shadow:0 3px 0 #cfe8e8;border:3px solid transparent;line-height:1.5}
+.q.ok{border-color:var(--g)}.q.no{border-color:var(--coral)}
+.o{font-size:13px;opacity:.6;margin:0 0 6px}
+.q input{font:700 16px 'Nunito',system-ui,sans-serif;width:100%;padding:9px 12px;border-radius:12px;border:2px solid #c6e5e5;background:var(--soft);color:var(--ink);outline:none;margin-top:6px}
+.q input:focus{border-color:var(--g)}
+.res{font-size:14px;margin:6px 0 0}
+.bank{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.bank span{border-radius:12px;padding:4px 10px;background:var(--gold);font-size:14px}
+.chips,.tiles{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chip{border:0;border-radius:14px;padding:6px 12px;background:#fff;color:var(--ink);font-size:16px;font-weight:600;box-shadow:0 2px 0 #c6e5e5;cursor:pointer}
+.q .chip{background:var(--soft)}
+.chip.good{background:var(--g);color:#fff}.chip.bad{background:#ffb3bd;animation:sh .3s}
+.gap{display:inline-block;min-width:70px;border-bottom:3px dashed var(--coral);text-align:center;color:var(--coral)}
+.gap.f2{border-bottom:3px solid var(--g);color:#16998c}
+.tiles{min-height:44px;padding:8px;border-radius:14px;background:var(--soft)}
+.tiles.ans{background:#fffbe8;border:2px dashed var(--gold)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fc{aspect-ratio:1.15;perspective:700px;touch-action:pan-y;cursor:pointer;user-select:none;-webkit-user-select:none}
+.in{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.3,1.3,.5,1);transform-style:preserve-3d}
+.fc.flip .in{transform:rotateY(180deg)}
+.fa,.fb{position:absolute;inset:0;border-radius:22px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;box-shadow:0 4px 0 rgba(20,90,100,.15)}
+.fa{background:#fff;border:3px solid var(--c)}
+.fb{background:var(--c);transform:rotateY(180deg)}
+.e{font-size:34px;line-height:1;margin:4px 0}
+.w{font:600 19px/1.15 'Baloo 2',system-ui,sans-serif}
+.fb .w{font-size:17px}
+.m{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:start}
+.m>div{display:grid;gap:8px}
+.m button{border:3px solid #cfe8e8;background:#fff;color:var(--ink);border-radius:16px;padding:9px 8px;font:700 15px/1.25 'Nunito',system-ui,sans-serif;cursor:pointer;min-height:52px}
+.m button.sel{border-color:var(--gold);background:#fff6d6}
+.m button.done{border-color:var(--c);background:var(--c);color:#fff;cursor:default}
+.m button.bad{animation:sh .3s;border-color:var(--coral)}
+.st{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:3px solid #cfe8e8;background:#fff;color:var(--ink);border-radius:16px;padding:10px;font:700 16px/1.3 'Nunito',system-ui,sans-serif;margin-bottom:8px;cursor:pointer}
+.st b{flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;font-family:'Baloo 2',system-ui,sans-serif}
+.st.done{border-color:var(--g);background:#e6faf7}.st.done b{background:var(--g);color:#fff}
+.st.bad{animation:sh .3s;border-color:var(--coral)}
+.txt p{margin:0 0 10px;line-height:1.55;font-size:17px}
+.txt ol{margin:6px 0 0;padding-left:0;list-style:none}
+.txt li{background:var(--soft);border-radius:14px;padding:9px 12px;margin-bottom:8px;font-size:17px}
+.boss{text-align:center}
+.bs{font-size:84px;line-height:1;margin:4px 0}
+.bs.hit{animation:sh .35s}.bs.dead{transform:rotate(90deg) scale(.6);opacity:.4;transition:.5s}
+.hp{height:16px;background:#fff;border-radius:10px;overflow:hidden;border:2px solid #ff5c6c;margin:6px 0}
+.hp i{display:block;height:100%;background:#ff5c6c;transition:width .4s}
+.hearts{font-size:24px;margin:4px 0 10px}
+.boss .q{text-align:left}
+@keyframes sh{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+@media(prefers-reduced-motion:reduce){.in{transition:none}.bs,.chip.bad,.m button.bad,.st.bad{animation:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Nurse English 🩺💉</h1>
+<p class="sub">Читаем, разбираем по словам и побеждаем босса 🦠</p>
+<div class="tabs" id="tabs"></div>
+<div id="app"></div>
+</div>
+<script>
+const COL=['#2ec4b6','#ff8a9a','#6fb7ff','#f2b632','#b48cff','#ff7eb6','#2cc0c0'];
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const $=h=>{const d=document.createElement('div');d.innerHTML=h.trim();return d.firstChild};
+const norm=s=>s.toLowerCase().replace(/[’‘`]/g,"'").replace(/[^\p{L}\p{N}\s']/gu,' ').replace(/\s+/g,' ').trim().replace(/'/g,'');
+const nz=s=>norm(s).replace(/^the /,'');
+const sec=(t,h)=>$(`<div><h2>${t}</h2><p class="hint">${h}</p><div class="bar"><i></i></div></div>`);
+const prog=(r,n,t)=>r.querySelector('.bar i').style.width=(100*n/t)+'%';
+const WIN=(r,t)=>r.appendChild($(`<div class="win">${t}</div>`));
+
+/* data: [sentence, "en|emoji|ru;...", [ "ru|en", ...]] */
+const S=[
+["THE PATIENTS NEED YOUR HELP","the|📌|Определённый артикль (этот/те);patients|🏥|Пациенты;need|🙏|Нуждаются;your|👉|Ваша (твоя);help|🆘|Помощь",["Пациенты|The patients","Ваша помощь|Your help","Пациентам нужна помощь|The patients need help"]],
+["The whole life of a nurse is devoted to people.","the|📌|Определённый артикль;whole|🌍|Целая;life|🧬|Жизнь;of|🧩|(предлог принадлежности);a nurse|👩‍⚕️|Медсестра;is|🔗|Есть, является (глагол-связка);devoted|❤️|Посвящена;to|➡️|К (предлог направления);people|👥|Людям",["Целая жизнь|The whole life","Жизнь медсестры|The life of a nurse","Жизнь посвящена людям|The life is devoted to people"]],
+["She is responsible for her patient.","she|👩|Она;is|🔗|Есть (глагол-связка);responsible|🛡️|Ответственна;for|🎯|За (предлог);her|👧|Её (притяжательное);patient|🛌|Пациент",["Она ответственна|She is responsible","Её пациент|Her patient","Она ответственна за пациента|She is responsible for her patient"]],
+["Every nurse must have enough knowledge of her work.","every|💯|Каждая;nurse|👩‍⚕️|Медсестра;must|❗|Должна;have|🤲|Иметь;enough|📊|Достаточно;knowledge|🧠|Знаний;of|🧩|(предлог принадлежности);her|👧|Её;work|💼|Работы",["Каждая медсестра|Every nurse","Её работа|Her work","Медсестра должна иметь знания|The nurse must have knowledge"]],
+["She must help her patients at any hour of the day or night.","she|👩|Она;must|❗|Должна;help|🤝|Помогать;her|👧|Её;patients|🏥|Пациентам;at|⏰|В (предлог времени);any|🔄|Любой;hour|🕐|Час;of|🧩|(предлог);the|📌|Определённый артикль;day|☀️|Дня;or|🔀|Или;night|🌙|Ночи",["Она должна помогать|She must help","Любой час|Any hour","День или ночь|Day or night"]],
+["That’s why you should know how to help a person in different situations.","that’s (that is)|🤔|Вот почему / Это есть;why|❓|Почему;you|👤|Вы (ты);should|👍|Следует;know|🧠|Знать;how|⚙️|Как;to|➡️|(частица инфинитива);help|🆘|Помочь;a|1️⃣|Неопределённый артикль;person|🧍|Человеку;in|📍|В (предлог места);different|🔀|Различных;situations|🚦|Ситуациях",["Ты должен знать|You should know","Как помочь|How to help","Разные ситуации|Different situations"]],
+["Situation 1. If you help a person who lost his consciousness:","situation|🚦|Ситуация;if|🤔|Если;you|👤|Вы (ты);help|🆘|Помогаете;a|1️⃣|Неопределённый артикль;person|🧍|Человеку;who|🙋|Который;lost|😵|Потерял;his|👦|Его;consciousness|💭|Сознание",["Ситуация один|Situation one","Если ты помогаешь|If you help","Человек потерял сознание|A person lost consciousness"]],
+["1. Lay the person flat on the back.","lay|🛏️|Уложите;the|📌|Определённый артикль;person|🧍|Человека;flat|📏|Ровно, плашмя;on|📍|На;back|🔙|Спину",["Уложите человека|Lay the person","На спину|On the back","Человек|The person"]],
+["2. Raise his feet a little.","raise|⬆️|Поднимите;his|👦|Его;feet|🦶|Ноги (ступни);a little|🤏|Немного",["Его ноги|His feet","Немного|A little","Поднимите его ноги|Raise his feet"]],
+["3. Loose his dress.","loose|👕|Ослабьте;his|👦|Его;dress|👗|Одежду",["Его одежда|His dress","Ослабьте|Loose","Ослабьте его одежду|Loose his dress"]],
+["4. Cover him warmly and open the window.","cover|🧣|Накройте;him|👤|Его (ему);warmly|🔥|Тепло;and|➕|И;open|🔓|Откройте;the|📌|Определённый артикль;window|🪟|Окно",["Откройте окно|Open the window","Накройте его|Cover him","И окно|And the window"]],
+["5. Sprinkle cold water on his face.","sprinkle|💦|Побрызгайте;cold|🧊|Холодной;water|💧|Водой;on|📍|На;his|👦|Его;face|🙂|Лицо",["Холодная вода|Cold water","Его лицо|His face","Побрызгайте водой|Sprinkle water"]]];
+const parse=w=>{const seen=new Set;return w.split(';').map(x=>x.split('|')).filter(a=>!seen.has(a[0])&&seen.add(a[0]))};
+
+/* engines */
+function cards(ws,title,hint){
+  const r=sec(title,hint),g=$('<div class="grid"></div>'),seen=new Set;
+  ws.forEach((d,i)=>{const c=COL[i%COL.length];
+    const el=$(`<div class="fc" style="--c:${c}"><div class="in"><div class="fa"><div class="e">${d[1]}</div><div class="w">${d[0]}</div></div><div class="fb"><div class="w">${d[2]}</div><div class="e">${d[1]}</div></div></div></div>`);
+    let x0=0;el.addEventListener('pointerdown',e=>x0=e.clientX);
+    el.addEventListener('pointerup',e=>{const dx=Math.abs(e.clientX-x0);if(dx<10||dx>25){el.classList.toggle('flip');seen.add(i);prog(r,seen.size,ws.length);if(seen.size==ws.length&&!r.querySelector('.win'))WIN(r,'🌟 Все карточки открыты!')}});
+    g.appendChild(el)});
+  r.appendChild(g);return r}
+
+function match(pairs,title,hint){
+  const r=sec(title,hint);let n=0,sel=null;
+  const A=$('<div></div>'),B=$('<div></div>'),m=$('<div class="m"></div>');
+  const mk=(t,i,s)=>{const b=$(`<button>${t}</button>`);b.dataset.i=i;b.dataset.s=s;return b};
+  const L=pairs.map((p,i)=>mk(p[0],i,'l')),R=shuffle(pairs.map((p,i)=>mk(p[1],i,'r')));
+  L.forEach(b=>A.appendChild(b));R.forEach(b=>B.appendChild(b));m.append(A,B);r.appendChild(m);
+  [...L,...R].forEach(b=>b.onclick=()=>{if(b.classList.contains('done'))return;
+    if(b.dataset.s=='l'){if(sel)sel.classList.remove('sel');sel=b;b.classList.add('sel');return}
+    const bad=()=>{b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),350)};
+    if(!sel)return bad();
+    if(sel.dataset.i==b.dataset.i){const c=COL[b.dataset.i%COL.length];[sel,b].forEach(x=>{x.classList.remove('sel');x.classList.add('done');x.style.setProperty('--c',c)});sel=null;prog(r,++n,pairs.length);if(n==pairs.length)WIN(r,'🏆 Все пары найдены! 💖')}else bad()});
+  return r}
+
+function typeTr(items,title,hint){
+  const r=sec(title,hint);
+  const qs=items.map((s,i)=>{const [ru,en]=s.split('|');const q=$(`<div class="q"><div>${i+1}. ${ru}</div><input type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="English…"><p class="res"></p></div>`);r.appendChild(q);return q});
+  const row=$('<div class="row"><button class="btn">Проверить ✅</button></div>');
+  row.firstChild.onclick=()=>{let n=0;qs.forEach((q,i)=>{const en=items[i].split('|')[1],ok=nz(q.querySelector('input').value)===nz(en);if(ok)n++;
+    q.className='q '+(ok?'ok':'no');q.querySelector('.res').innerHTML=ok?'✅ Верно!':'❌ Правильно: <b>'+en+'</b>'});prog(r,n,items.length)};
+  r.appendChild(row);return r}
+
+function build(items,title,hint){ /* items: [prompt, answer] */
+  const r=sec(title,hint);let n=0;
+  items.forEach((d,i)=>{const words=d[1].split(' '),q=$(`<div class="q"><div>${i+1}. ${d[0]}</div><div class="tiles ans"></div><div class="tiles"></div><p class="res"></p></div>`);
+    const ans=q.children[1],pool=q.children[2],res=q.querySelector('.res');let done=false;
+    const check=()=>{const got=[...ans.children].map(x=>x.textContent);
+      if(got.length==words.length){if(norm(got.join(' '))===norm(d[1])){done=true;q.className='q ok';res.textContent='✅ Верно!';prog(r,++n,items.length);if(n==items.length)WIN(r,'🏆 Отлично! 💫')}else{q.className='q no';res.textContent='❌ Попробуй другой порядок'}}else{q.className='q';res.textContent=''}};
+    shuffle(words).forEach(w=>{const c=$(`<button class="chip">${w}</button>`);
+      c.onclick=()=>{if(done)return;(c.parentNode===pool?ans:pool).appendChild(c);check()};pool.appendChild(c)});
+    r.appendChild(q)});
+  return r}
+
+function choose(items,title,hint){ /* [text with ___, opts, idx] */
+  const r=sec(title,hint);let n=0;
+  items.forEach((d,i)=>{const [a,b]=d[0].split('___');
+    const q=$(`<div class="q"><div>${i+1}. ${a}<span class="gap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>${b}</div><div class="chips"></div></div>`);
+    let ok=false;const gap=q.querySelector('.gap');
+    d[1].forEach((w,j)=>{const c=$(`<button class="chip">${w}</button>`);
+      c.onclick=()=>{if(ok)return;if(j==d[2]){ok=true;c.classList.add('good');gap.textContent=w;gap.classList.add('f2');q.classList.add('ok');prog(r,++n,items.length);if(n==items.length)WIN(r,'🎉 Без ошибок! 🌟')}else{c.classList.remove('bad');void c.offsetWidth;c.classList.add('bad')}};
+      q.querySelector('.chips').appendChild(c)});
+    r.appendChild(q)});
+  return r}
+
+function steps(items,title,hint){ /* items: [text, number] */
+  const r=sec(title,hint);let next=1;
+  shuffle(items).forEach(d=>{const b=$(`<button class="st"><b>?</b><span>${d[0]}</span></button>`);
+    b.onclick=()=>{if(b.classList.contains('done'))return;
+      if(d[1]==next){b.classList.add('done');b.firstChild.textContent=next;prog(r,next,items.length);if(next++==items.length)WIN(r,'🏆 Ты спас человека! 🚑')}
+      else{b.classList.remove('bad');void b.offsetWidth;b.classList.add('bad')}};
+    r.appendChild(b)});
+  return r}
+
+/* tabs */
+const tabs=document.getElementById('tabs'),app=document.getElementById('app');
+const T=['📖 Текст','🔤 Слова','📝 Практика','🐲 BOSS'];
+T.forEach((t,i)=>{const b=$(`<button class="tab${i==3?' boss':''}">${t}</button>`);b.onclick=()=>show(i);tabs.appendChild(b)});
+
+function text(){
+  const r=$(`<div><div class="q txt"><h2 style="margin-top:0">THE PATIENTS NEED YOUR HELP 🏥</h2>
+<p>The whole life of a nurse is devoted to people. She is responsible for her patient. Every nurse must have enough knowledge of her work. She must help her patients at any hour of the day or night. That’s why you should know how to help a person in different situations.</p>
+<p><b>Situation 1.</b> If you help a person who lost his consciousness:</p>
+<ol><li>1. Lay the person flat on the back. 🛌</li><li>2. Raise his feet a little. 🦶</li><li>3. Loose his dress. 👕</li><li>4. Cover him warmly and open the window. 🪟</li><li>5. Sprinkle cold water on his face. 💦</li></ol></div>
+<div class="row"><button class="btn">Разберём по словам 🔤</button></div></div>`);
+  r.querySelector('.btn').onclick=()=>show(1);return r}
+
+let cur=0;
+function words(){
+  const r=$('<div></div>'),pills=$('<div class="pills"></div>'),body=$('<div></div>');
+  S.forEach((s,i)=>{const p=$(`<button class="pill${i==cur?' on':''}">${i+1}</button>`);p.onclick=()=>{cur=i;show(1)};pills.appendChild(p)});
+  const [t,w,tr]=S[cur],ws=parse(w);
+  body.appendChild($(`<div class="q"><div class="o">Предложение ${cur+1} из ${S.length}</div><b style="font-size:19px">${t}</b></div>`));
+  body.appendChild(cards(ws,'🃏 Шаг 1 · Карточки','Тапни или свайпни карточку: на обороте перевод.'));
+  body.appendChild(match(ws.map(a=>[a[0],a[2]]),'🔗 Шаг 2 · Найди пару','Тапни английское слово, потом русский перевод.'));
+  body.appendChild(cur==2?build(tr.map(x=>{const [ru,en]=x.split('|');return[ru,en]}),'🧩 Шаг 3 · Собери фразу','Тапай слова по порядку. Тапни слово в жёлтой рамке, чтобы убрать.')
+    :typeTr(tr,'✍️ Шаг 3 · Переведи','Напиши по-английски. Регистр и точка не важны.'));
+  if(cur<S.length-1){const row=$('<div class="row"><button class="btn alt">Следующее предложение ➡️</button></div>');row.firstChild.onclick=()=>{cur++;show(1)};body.appendChild(row)}
+  else{const row=$('<div class="row"><button class="btn alt">К практике 📝</button></div>');row.firstChild.onclick=()=>show(2);body.appendChild(row)}
+  r.append(pills,body);return r}
+
+function practice(){
+  const r=$('<div></div>');
+  r.appendChild(match([["Nurse","Медсестра"],["Patient","Пациент"],["Help","Помогать"],["Day","День"],["Night","Ночь"],["Water","Вода"],["Face","Лицо"],["Window","Окно"]],'Упражнение 1 🔗 Соедини слово и перевод','Тапни английское слово, потом русское.'));
+  const bank=['help','nurse','patient','night','water','window'];
+  r.appendChild($('<div class="bank">'+bank.map(w=>`<span>${w}</span>`).join('')+'</div>'));
+  r.appendChild(choose([["The ___ works at the hospital. 👩‍⚕️",bank,1],["The ___ is sick. 🤒",bank,2],["I want to ___ you. 🤝",bank,0],["It is dark at ___. 🌙",bank,3],["Open the ___, please. 🪟",bank,5],["Drink cold ___. 💧",bank,4]],'Упражнение 2 ✏️ Вставь пропущенное слово','Выбери слово из рамки выше.'));
+  r.appendChild(choose([["The nurse helps her ___.",["window","patient","water"],1],["Lay the person on the ___.",["back","face","day"],0],["Raise his ___ a little.",["window","feet","water"],1],["Cover him ___.",["cold","warmly","flat"],1],["Sprinkle cold ___ on his face.",["water","dress","nurse"],0]],'Упражнение 3 🎯 Выбери правильный вариант','Тапни подходящее слово.'));
+  r.appendChild(steps([["Sprinkle cold water on his face. 💦",5],["Lay the person flat on the back. 🛌",1],["Cover him warmly and open the window. 🪟",4],["Raise his feet a little. 🦶",2],["Loose his dress. 👕",3]],'Упражнение 5 🔢 Расставь по порядку','Человек потерял сознание. Тапай действия в правильном порядке: 1, 2, 3…'));
+  r.appendChild(build([["nurse / The / patients / helps / .","The nurse helps patients."],["on / Lay / back / the / person / the / .","Lay the person on the back."],["water / Sprinkle / face / cold / his / on / .","Sprinkle cold water on his face."],["window / the / Open / .","Open the window."],["dress / Loose / his / .","Loose his dress."]],'Упражнение 6 🧩 Собери предложение','Тапай слова по порядку. Тапни слово в жёлтой рамке, чтобы убрать.'));
+  return r}
+
+/* boss: [text, ru hint, answers, options?] */
+const Q=[["Lay the person ___ on the back. 🛌","ровно",["flat"],["flat","cold","warmly"]],
+["Raise his ___ a little. 🦶","ноги",["feet"],["feet","face","dress"]],
+["Sprinkle ___ water on his face. 💦","холодной",["cold"],["cold","flat","warm"]],
+["Cover him ___. 🧣","тепло",["warmly"],["warmly","flat","cold"]],
+["She is ___ for her patient. 🛡️","ответственна",["responsible"]],
+["Every nurse ___ have enough knowledge. ❗","должна",["must"],["must","need","is"]],
+["The whole ___ of a nurse is devoted to people. 🧬","жизнь",["life"]],
+["She must help her patients at any ___ of the day or night. 🕐","час",["hour"]],
+["That’s why you ___ know how to help. 👍","следует",["should"],["should","help","of"]],
+["Open the ___. 🪟","окно",["window"]],
+["Loose his ___. 👗","одежду",["dress"],["dress","water","night"]],
+["The patients need your ___. 🆘","помощь",["help"]],
+["It is dark at ___. 🌙","ночью",["night"]]];
+function boss(){
+  const r=$('<div class="boss"><h2>FINAL BOSS 🦠</h2><p class="hint">Победи Вирус Обморока! Верный ответ наносит удар. Ошибка отнимает ❤️, а вопрос вернётся позже.</p><div class="bs">🦠</div><div class="hp"><i style="width:100%"></i></div><div class="hearts"></div><div class="area"></div></div>');
+  let queue,hearts,total,over;const bs=r.querySelector('.bs'),hp=r.querySelector('.hp i'),hr=r.querySelector('.hearts'),area=r.querySelector('.area');
+  const upd=()=>{hr.textContent='❤️'.repeat(hearts)+'🖤'.repeat(3-hearts);hp.style.width=(100*queue.length/total)+'%'};
+  const end=win=>{over=true;bs.classList.toggle('dead',win);area.innerHTML=win?'<div class="win">🏆 Вирус побеждён! Ты настоящая медсестра! 🩺🎉</div>':'<div class="win" style="color:#c93546">💀 Вирус победил… Попробуй ещё!</div>';
+    const b=$('<div class="row"><button class="btn">Играть снова 🔁</button></div>');b.firstChild.onclick=start;area.appendChild(b)};
+  const next=()=>{if(!queue.length)return end(true);
+    const d=queue[0],[a,b]=d[0].split('___'),q=$(`<div class="q"><div class="o">${d[1]}</div><div>${a}<span class="gap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>${b}</div></div>`);
+    const gap=q.querySelector('.gap'),fb=$('<p class="res"></p>');
+    const answer=ok=>{if(over||q.dataset.d)return;q.dataset.d=1;
+      if(ok){queue.shift();gap.textContent=d[2][0];gap.classList.add('f2');q.classList.add('ok');fb.textContent='💥 Попала!';bs.classList.remove('hit');void bs.offsetWidth;bs.classList.add('hit')}
+      else{hearts--;queue.push(queue.shift());gap.textContent=d[2][0];q.classList.add('no');fb.innerHTML='💔 Правильно: <b>'+d[2][0]+'</b>'}
+      upd();setTimeout(()=>{if(hearts<=0)end(false);else next()},ok?700:1500)};
+    if(d[3]){const ch=$('<div class="chips"></div>');shuffle(d[3]).forEach(w=>{const c=$(`<button class="chip">${w}</button>`);c.onclick=()=>answer(d[2].includes(w));ch.appendChild(c)});q.appendChild(ch)}
+    else{const row=$('<div class="row" style="justify-content:flex-start"><input type="text" autocomplete="off" autocapitalize="none" spellcheck="false" style="width:150px"><button class="btn">⚔️ Удар</button></div>'),inp=row.firstChild;
+      const go=()=>answer(d[2].some(x=>norm(x)===norm(inp.value)));row.lastChild.onclick=go;inp.onkeydown=e=>{if(e.key=='Enter')go()};q.appendChild(row)}
+    q.appendChild(fb);area.innerHTML='';area.appendChild(q)};
+  const start=()=>{queue=shuffle(Q);total=Q.length;hearts=3;over=false;bs.classList.remove('dead');upd();next()};
+  start();return r}
+
+const F=[text,words,practice,boss];
+function show(i){[...tabs.children].forEach((t,k)=>t.classList.toggle('on',k==i));app.innerHTML='';app.appendChild(F[i]());window.scrollTo(0,0)}
+show(0);
+</script>
+</body>
+</html>
